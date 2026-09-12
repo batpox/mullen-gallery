@@ -9,10 +9,44 @@
 </head>
 <body>
   <header class="site-header">
-    <p class="eyebrow">Artist collection</p>
-    <h1>Mullen Gallery</h1>
-    <p class="intro">Select a category, then choose an image to view the full-sized work.</p>
+    <a class="wordmark" href="#top">Joe Mullen</a>
+    <nav aria-label="Primary navigation">
+      <a href="#about">About</a>
+      <a href="#book">Book</a>
+      <a href="#works">Gallery</a>
+    </nav>
   </header>
+
+  <main id="top">
+    <section id="about" class="artist-introduction">
+      <div>
+        <p class="eyebrow">The art and life of</p>
+        <h1>Joe Mullen</h1>
+      </div>
+      <div class="artist-copy">
+        <p>Joe Mullen was a Pennsylvania artist whose work moved freely among Expressionism, Realism, Fauvism, and Surrealism. Raised in the Susquehanna River valley in Sayre, he explored the landscape around him and recorded his thoughts, dreams, experiences, and emotions directly on canvas.</p>
+        <blockquote>“A masterpiece is a piece of the master.”</blockquote>
+      </div>
+    </section>
+
+    <section id="book" class="book-feature">
+      <a class="book-cover-link" href="https://www.amazon.com/Secret-Famous-Artist-Joe-Mullen/dp/1636830617" target="_blank" rel="noopener">
+        <img src="assets/joe-mullen-book-cover-kathleen-huddle.jpeg" alt="Cover of Secret Famous Artist Joe Mullen by Kathleen Huddle">
+      </a>
+      <div class="book-copy">
+        <p class="eyebrow">The story behind the work</p>
+        <h2><cite>Secret Famous Artist Joe Mullen</cite></h2>
+        <p class="book-author">By Kathleen Huddle</p>
+        <p>Written by Joe’s sister in his honor, the book remembers a fiercely independent, deeply thoughtful artist and places his paintings alongside the convictions, humor, curiosity, and generosity that shaped his life and work.</p>
+        <a class="amazon-link" href="https://www.amazon.com/Secret-Famous-Artist-Joe-Mullen/dp/1636830617" target="_blank" rel="noopener">View the book on Amazon <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+
+    <section id="works" class="gallery-introduction">
+      <p class="eyebrow">Selected works</p>
+      <h2>The paintings</h2>
+      <p>Select a category, then choose a work to see it in full.</p>
+    </section>
 
   <nav class="filters" aria-label="Gallery categories">
     <button class="filter active" type="button" data-filter="all" aria-pressed="true">All works</button>
