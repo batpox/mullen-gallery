@@ -180,39 +180,37 @@ const assetFiles = [
   "248-lunch-9043a14816.jpg",
   "249-pillar-d05a93894f.jpg",
   "250-future-table-618848324c.jpg",
-  "251-lori-2858ff08b9.jpg",
-  "252-mail-girl-70ed26c8fc.jpg",
-  "253-stacy-0cf0480a81.jpg",
-  "254-salad-f526843d30.jpg",
-  "255-my-aunts-bathroom-eecf05fb13.jpg",
-  "256-green-glow-2b466d592a.jpg",
-  "257-cavern-lake-8767347bd0.jpg",
-  "258-money-our-1ea853436a.jpg",
-  "259-industrial-3236e1f473.jpg",
-  "260-happy-couple-7cf9e9793e.jpg",
-  "261-bonnie-in-d88fbfca97.jpg",
-  "262-abandoned-in-20d9e951d3.jpg",
-  "263-he-is-us-2ade275da2.jpg",
-  "264-my-fathers-2c1f22d648.jpg",
-  "265-bonnie-in-168a16c5dd.jpg",
-  "266-betty-75e496d9b5.jpg",
-  "267-one-way-ab1c5725e7.jpg",
-  "268-midnight-snack-fb55005229.jpg",
-  "269-lion-2b9c2b72e5.jpg",
-  "270-housing-project-a8f725a603.jpg",
-  "271-melissa-in-993f35db9b.jpg",
-  "272-sara-c42b0a82aa.jpg",
-  "273-canoe-at-88ada7baa3.jpg",
-  "274-country-048f04940f.jpg",
-  "275-river-rat-boat-524ccaaf36.jpg",
-  "276-the-end-9d3a89e365.jpg",
+  "Mullen-251-Mail-Girl.jpg",
+  "Mullen-252-Stacy.jpg",
+  "Mullen-253-Salad.jpg",
+  "Mullen-254-My-Aunts-Bathroom.jpg",
+  "Mullen-255-Green-Glow.jpg",
+  "Mullen-256-Cavern-Lake.jpg",
+  "Mullen-257-Money-Our-God.jpg",
+  "Mullen-258-Industrial-Sewer.jpg",
+  "Mullen-259-Happy-Couple.jpg",
+  "Mullen-260-Bonnie-in-Tweed.jpg",
+  "Mullen-261-Abandoned-in-the-Sky.jpg",
+  "Mullen-262-He-Is-Us.jpg",
+  "Mullen-263-My-Fathers-Grave.jpg",
+  "Mullen-264-Bonnie-in-a-Bubble.jpg",
+  "Mullen-265-Betty.jpg",
+  "Mullen-266-One-Way.jpg",
+  "Mullen-267-Midnight-Snack.jpg",
+  "Mullen-268-Lion.jpg",
+  "Mullen-269-Housing-Project.jpg",
+  "Mullen-270-Melissa-in-Her-Cups.jpg",
+  "Mullen-271-Sara.jpg",
+  "Mullen-272-Canoe-at-Night.jpg",
+  "Mullen-273-Country-Singer.jpg",
+  "Mullen-274-River-Rat-Boat-Club.jpg",
   "49c67888-a28c-4adb-9633-95e8ae0c16fb.jpg"
 ];
 
 const categories = {
-  people: new Set([1,2,7,10,15,16,17,20,26,28,29,32,33,37,38,39,40,42,43,45,51,55,56,58,61,63,64,67,69,71,72,73,74,75,77,78,81,152,153,154,157,158,159,161,162,163,165,167,168,169,172,177,178,181,182,183,187,188,190,192,193,195,196,197,198,199,204,205,207,208,209,213,214,215,216,218,220,221,223,226,228,233,239,241,242,244,245,247,251,252,253,260,261,262,265,266,271,272,274,275]),
-  places: new Set([3,4,6,8,11,19,21,27,41,46,52,54,60,62,66,68,70,76,79,80,164,171,176,180,191,200,201,210,211,212,217,219,222,238,240,243,257,259,264,267,268,273,276]),
-  nature: new Set([22,24,30,31,36,48,49,50,53,59,156,160,175,179,185,206,224,225,230,232,234,235,263,269])
+  people: new Set([1,2,7,10,15,16,17,20,26,28,29,32,33,37,38,39,40,42,43,45,51,55,56,58,61,63,64,67,69,71,72,73,74,75,77,78,81,152,153,154,157,158,159,161,162,163,165,167,168,169,172,177,178,181,182,183,187,188,190,192,193,195,196,197,198,199,204,205,207,208,209,213,214,215,216,218,220,221,223,226,228,233,239,241,242,244,245,247,251,252,259,260,261,264,265,270,271,273,274]),
+  places: new Set([3,4,6,8,11,19,21,27,41,46,52,54,60,62,66,68,70,76,79,80,164,171,176,180,191,200,201,210,211,212,217,219,222,238,240,243,256,258,263,266,267,272]),
+  nature: new Set([22,24,30,31,36,48,49,50,53,59,156,160,175,179,185,206,224,225,230,232,234,235,262,268])
 };
 
 const titleOverrides = {
@@ -228,17 +226,17 @@ const titleOverrides = {
   "206": "Crow Sees Log in River",
   "210": "Dutch's Tent",
   "245": "A Woman's",
-  "255": "My Aunt's Bathroom",
-  "264": "My Father's"
+  "254": "My Aunt's Bathroom",
+  "263": "My Father's Grave"
 };
 
 function titleFromFilename(file) {
-  const number = file.match(/^(\d+)/)?.[1];
+  const number = file.match(/^(?:Mullen-)?(\d+)/)?.[1];
   if (number && titleOverrides[number]) return titleOverrides[number];
 
   const slug = file
     .replace(/\.jpe?g$|\.png$/i, "")
-    .replace(/^\d+-/, "")
+    .replace(/^(?:Mullen-)?\d+-/, "")
     .replace(/-[a-f0-9]{10}$/i, "")
     .replaceAll("-", " ");
 
@@ -246,7 +244,7 @@ function titleFromFilename(file) {
 }
 
 function categoryFor(file) {
-  const number = Number.parseInt(file, 10);
+  const number = Number.parseInt(file.match(/^(?:Mullen-)?(\d+)/)?.[1], 10);
   if (categories.people.has(number)) return "people";
   if (categories.places.has(number)) return "places";
   if (categories.nature.has(number)) return "nature";
